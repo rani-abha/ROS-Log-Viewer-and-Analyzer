@@ -7,7 +7,6 @@ import EnhancedTable from './screens/table'
 import { APIService } from './services/logApi';
 
 function Root() {
-  const [count, setCount] = useState(0)
   const { state, dispatch } = useAppContext();
   const [file, setFile] = useState<File | null>(null);
 
@@ -43,14 +42,7 @@ const handleFileUpload = async () => {
  <h1>Logs</h1>
             {state.loading && <p>Loading...</p>}
             {state.error && <p>Error: {state.error}</p>}
-          
-            
-            <ul>
-                {/* {state.severities.map((severity, index) => (
-                    <li key={index}>{severity}</li>
-                ))} */}
-                
-            </ul>
+
             <h2>Upload File</h2>
             <input type="file" onChange={handleFileChange} />
             <button onClick={handleFileUpload}>Upload</button>
